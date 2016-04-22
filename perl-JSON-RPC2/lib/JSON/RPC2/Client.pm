@@ -144,7 +144,8 @@ sub response {      ## no critic (ProhibitExcessComplexity RequireArgUnpacking)
     if (ref $response ne 'HASH') {
         return 'expect Object';
     }
-    if (!defined $response->{jsonrpc} || $response->{jsonrpc} ne '2.0') {
+    # if (!defined $response->{jsonrpc} || $response->{jsonrpc} ne '2.0') { original
+    if (defined $response->{jsonrpc} && $response->{jsonrpc} ne '2.0') {
         return 'expect {jsonrpc}="2.0"';
     }
     if (!exists $response->{id} || ref $response->{id} || !defined $response->{id}) {
