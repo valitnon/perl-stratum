@@ -11,9 +11,8 @@ use FindBin;
 use lib "$FindBin::Bin/";
 use stratum;
 
-#my $bannerText = "Welcome to Electrum!"; #Default banner text
-my $bannerText = "Welcome to the Airbitz Electrum Server!";
-my $method = "server.banner";
+my $donationAddress = ""; #Default there is no donation address
+my $method = "server.donation_address";
 
 my $verbose = 0;
 
@@ -23,13 +22,13 @@ print "Testing $method method..\n" if $verbose;
 my @params = ("");
 my ($success,$result) = stratum::sendToElectrum($method, \@params);
 if($success){
-  if($result eq $bannerText){
+  if($result eq $donationAddress){
     print "$method successfull. Response: $result\n";
   }
   else{
-    print "$method successfull, but banner text differs:
-    \tbanner text expected: $bannerText
-    \tbanner text received: $result\n";
+    print "$method successfull, but donation address differs:
+    \tdonation address expected: $donationAddress
+    \tdonation address received: $result\n";
     exit 1;
   }
 }

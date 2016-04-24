@@ -16,7 +16,7 @@ my $method = "server.version";
 
 my $verbose = 0;
 
-stratum::new();
+stratum::new($ARGV[0]);
 
 print "Testing $method method..\n" if $verbose;
 my @params = ("1.9.5", "0.6");
@@ -29,7 +29,11 @@ if($success){
     print "$method successfull, but version differs:
     \tVersion expected: $serverProtocolVersion
     \tVersion received: $result\n";
+    exit 1;
   }
+}
+else{
+  exit 1;
 }
 
 stratum::close();
