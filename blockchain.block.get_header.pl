@@ -15,11 +15,11 @@ use lib "$FindBin::Bin/";
 use stratum;
 
 my $verbose = 0;
+my $method = "blockchain.block.get_header";
 
 my $height = "1";
 
-my $method = "blockchain.block.get_header";
-
+#Expected answer
 my $blockHeader = {
     nonce => 2573394689,
     prev_block_hash  =>  "000000000019d6689c085ae165831e934ff763ae46a2a6c172b3f1b60a8ce26f",

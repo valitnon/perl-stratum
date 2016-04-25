@@ -11,15 +11,19 @@ use FindBin;
 use lib "$FindBin::Bin/";
 use stratum;
 
-my $serverProtocolVersion = 1.0;
+my $verbose = 0;
 my $method = "server.version";
 
-my $verbose = 0;
+my $clientVersion = "1.9.5";
+my $protocolVersion = "0.6";
+
+#Expected answer
+my $serverProtocolVersion = 1.0;
 
 stratum::new($ARGV[0]);
 
 print "Testing $method method..\n" if $verbose;
-my @params = ("1.9.5", "0.6");
+my @params = ($clientVersion, $protocolVersion);
 my ($success,$result) = stratum::sendToElectrum($method, \@params);
 if($success){
   if($result == $serverProtocolVersion){

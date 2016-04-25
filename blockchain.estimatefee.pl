@@ -12,10 +12,9 @@ use lib "$FindBin::Bin/";
 use stratum;
 
 my $verbose = 0;
+my $method = "blockchain.estimatefee";
 
 my $nrOfBlocks = 1; #to be included within a certain number of blocks
-
-my $method = "blockchain.estimatefee";
 
 stratum::new($ARGV[0]);
 

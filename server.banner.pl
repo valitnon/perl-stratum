@@ -11,11 +11,12 @@ use FindBin;
 use lib "$FindBin::Bin/";
 use stratum;
 
-#my $bannerText = "Welcome to Electrum!"; #Default banner text
-my $bannerText = "Welcome to the Airbitz Electrum Server!";
+my $verbose = 0;
 my $method = "server.banner";
 
-my $verbose = 0;
+#Expected answer
+#my $bannerText = "Welcome to Electrum!"; #Default banner text
+my $bannerText = "Welcome to the Airbitz Electrum Server!";
 
 stratum::new($ARGV[0]);
 

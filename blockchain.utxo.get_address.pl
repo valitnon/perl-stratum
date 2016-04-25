@@ -12,12 +12,13 @@ use lib "$FindBin::Bin/";
 use stratum;
 
 my $verbose = 0;
+my $method = "blockchain.utxo.get_address";
 
 my $tx = "099a702ef506850d70b15d3bed19ada3a1fde5a403b35a11256fcfb581ee3372";
 my $position = 0;
-my $result_address= "1JZVW1eiHqRKMbsvYzkDgPk5UqYwhNwnRz";
 
-my $method = "blockchain.utxo.get_address";
+#Expected answer
+my $result_address= "1JZVW1eiHqRKMbsvYzkDgPk5UqYwhNwnRz";
 
 stratum::new($ARGV[0]);
 

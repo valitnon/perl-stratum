@@ -15,10 +15,11 @@ use lib "$FindBin::Bin/";
 use stratum;
 
 my $verbose = 0;
-
-my $address = "1NS17iag9jJgTHD1VXjvLCEnZuQ3rJDE9L";
 my $method = "blockchain.address.get_balance";
 
+my $address = "1NS17iag9jJgTHD1VXjvLCEnZuQ3rJDE9L";
+
+#Expected answer
 my $balance = {
     confirmed => 90085204083,
     unconfirmed  =>  0,

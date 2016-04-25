@@ -13,9 +13,12 @@ use FindBin;
 use lib "$FindBin::Bin/";
 use stratum;
 
-my $address = "15MbykpnH6uhuLPmUxWSB4L7CBY7DChDfK";
+my $verbose = 0;
 my $method = "blockchain.address.get_history";
 
+my $address = "15MbykpnH6uhuLPmUxWSB4L7CBY7DChDfK";
+
+#Expected answer
 my $history =[
   {
     tx_hash => 'e2f78b9fe2c8c63af4829081cfde576f1c88969d54659e61a45b2c9fd22a43c3',
@@ -26,8 +29,6 @@ my $history =[
     height => 291406,
   },
 ];
-
-my $verbose = 0;
 
 stratum::new($ARGV[0]);
 

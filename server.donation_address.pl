@@ -11,10 +11,11 @@ use FindBin;
 use lib "$FindBin::Bin/";
 use stratum;
 
-my $donationAddress = ""; #Default there is no donation address
+my $verbose = 0;
 my $method = "server.donation_address";
 
-my $verbose = 0;
+#Expected answer
+my $donationAddress = ""; #Default there is no donation address
 
 stratum::new($ARGV[0]);
 

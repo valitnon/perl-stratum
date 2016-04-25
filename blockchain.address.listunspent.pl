@@ -13,9 +13,12 @@ use FindBin;
 use lib "$FindBin::Bin/";
 use stratum;
 
-my $address = "1JZVW1eiHqRKMbsvYzkDgPk5UqYwhNwnRz";
+my $verbose = 0;
 my $method = "blockchain.address.listunspent";
 
+my $address = "1JZVW1eiHqRKMbsvYzkDgPk5UqYwhNwnRz";
+
+#Expected answer
 my $utxos =[
   {
     tx_pos => 0,
@@ -24,8 +27,6 @@ my $utxos =[
     value => 10000,
   },
 ];
-
-my $verbose = 0;
 
 stratum::new($ARGV[0]);
 

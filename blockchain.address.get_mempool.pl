@@ -14,10 +14,11 @@ use lib "$FindBin::Bin/";
 use stratum;
 
 my $verbose = 0;
-
-my $address = "15MbykpnH6uhuLPmUxWSB4L7CBY7DChDfK";
 my $method = "blockchain.address.get_mempool";
 
+my $address = "15MbykpnH6uhuLPmUxWSB4L7CBY7DChDfK";
+
+#Expected answer
 my $mempool =[]; #Empy unless tx in mempool
 # my $mempool =[
 #   {
